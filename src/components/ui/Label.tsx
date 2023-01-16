@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import Icons from "../../utils/Icons";
+import {Icons} from "../../utils/Images";
 
 const LabelStyle = styled.div<any>`
   background-color: ${props => props.theme.color.red1}0F;
