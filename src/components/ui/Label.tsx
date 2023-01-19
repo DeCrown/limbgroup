@@ -11,7 +11,6 @@ const LabelStyle = styled.div<any>`
 
   font-weight: 500;
   font-size: 14px;
-  line-height: 100%;
 
   display: grid;
   align-items: center;

@@ -32,6 +32,10 @@ const ButtonMainStyle = styled(Button)`
     opacity: 0.5;
     cursor: auto;
   }
+
+  .mobile & {
+    width: 100%;
+  }
 `;
 
 export const ButtonMain = (props: any) => {
@@ -62,6 +66,7 @@ export const ButtonSoft = (props: any) => {
 const ButtonMainMinStyle = styled(ButtonMainStyle)`
   width: 160px;
   height: 34px;
+  font-weight: 700;
 `;
 
 export const ButtonMainMin = (props: any) => {

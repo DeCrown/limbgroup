@@ -3,7 +3,7 @@ import Theme from "./utils/Theme";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./utils/GlobalStyle";
 import Main from "./pages/main";
-import {initDevice} from "./utils/Device";
+import {DEVICE, initDevice} from "./utils/Device";
 
 function App() {
 
@@ -12,7 +12,7 @@ function App() {
     return (
         <ThemeProvider theme={Theme}>
             <GlobalStyle />
-            <div className="App">
+            <div className={"App " + DEVICE}>
                 <Main />
             </div>
         </ThemeProvider>

@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from "styled-components";
 
-const SwitchStyle = styled.div`
+const SwitchStyle = styled.div<{checked: boolean}>`
   background-color: ${props => props.theme.color.gray2}22;
   border-radius: 9px;
 
@@ -17,21 +17,27 @@ const SwitchStyle = styled.div`
     width: 14px;
     height: 14px;
     position: relative;
-    left: 0;
-    transition: left 0.2s linear;
-  }
-  
-  &.checked > div {
-    left: 16px;
+    left: ${props => props.checked ? 16 : 0}px;
+    transition: left 0.1s linear;
   }
 `;
 
-export const SwitchGray = (props: any) => {
-    const [value, setValue] = useState(false);
+interface SwitchProps {
+    mode?: any;
+    value: boolean;
+    setValue?: (value: boolean) => void;
+}
+
+export const SwitchGray = (props: SwitchProps) => {
     const Mode = props.mode ? props.mode : SwitchStyle;
+    const click = () => {
+        if (props.setValue) {
+            props.setValue(!props.value);
+        }
+    }
 
     return (
-        <Mode onClick={() => setValue(!value)} className={value ? 'checked' : null}>
+        <Mode onClick={click} checked={props.value}>
             <div/>
         </Mode>
     );
@@ -46,7 +52,7 @@ const SwitchRedStyle = styled(SwitchStyle)`
   }
 `;
 
-export const SwitchRed = () => <SwitchGray mode={SwitchRedStyle}><div /></SwitchGray>;
+export const SwitchRed = (props: SwitchProps) => <SwitchGray {...props} mode={SwitchRedStyle} />;
 
 /* GREEN */
 
@@ -57,7 +63,7 @@ const SwitchGreenStyle = styled(SwitchStyle)`
   }
 `;
 
-export const SwitchGreen = () => <SwitchGray mode={SwitchGreenStyle}><div /></SwitchGray>;
+export const SwitchGreen = (props: SwitchProps) => <SwitchGray {...props} mode={SwitchGreenStyle}/>;
 
 /* BLACK */
 
@@ -68,7 +74,7 @@ const SwitchBlackStyle = styled(SwitchStyle)`
   }
 `;
 
-export const SwitchBlack = () => <SwitchGray mode={SwitchBlackStyle}><div /></SwitchGray>;
+export const SwitchBlack = (props: SwitchProps) => <SwitchGray {...props} mode={SwitchBlackStyle}/>;
 
 /* WHITE */
 
@@ -79,7 +85,7 @@ const SwitchWhiteStyle = styled(SwitchStyle)`
   }
 `;
 
-export const SwitchWhite = () => <SwitchGray mode={SwitchWhiteStyle}><div /></SwitchGray>;
+export const SwitchWhite = (props: SwitchProps) => <SwitchGray {...props} mode={SwitchWhiteStyle}/>;
 
 /* REVERSE */
 
@@ -90,4 +96,4 @@ const SwitchReverseStyle = styled(SwitchStyle)`
   }
 `;
 
-export const SwitchReverse = () => <SwitchGray mode={SwitchReverseStyle}><div /></SwitchGray>;
+export const SwitchReverse = (props: SwitchProps) => <SwitchGray {...props} mode={SwitchReverseStyle}/>;

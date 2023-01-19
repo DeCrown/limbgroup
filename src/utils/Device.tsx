@@ -2,10 +2,10 @@
 export let DEVICE = 'desktop';
 
 export const initDevice = () => {
-    if (window.innerWidth > 1184) {
+    if (document.body.clientWidth >= 1480) {
         return DEVICE = 'desktop';
     }
-    if (window.innerWidth > 375) {
+    if (document.body.clientWidth >= 980) {
         return DEVICE = 'tablet';
     }
     return DEVICE = 'mobile';

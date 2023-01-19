@@ -8,7 +8,6 @@ const InputStyle = styled.input`
 
   font-weight: 400;
   font-size: 20px;
-  line-height: 100%;
   color: ${props => props.theme.color.black1};
 
   width: 360px;
@@ -17,9 +16,9 @@ const InputStyle = styled.input`
   padding: 0 20px;
 `;
 
-const Input = () => {
+const Input = (props: any) => {
     return (
-        <InputStyle type={'text'} />
+        <InputStyle type={'text'} {...props} />
     );
 };
 
