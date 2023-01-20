@@ -3,8 +3,9 @@ import styled from "styled-components";
 import Content from "../../shared/Content";
 import Contacts from "./Contacts";
 import {Icons} from "../../../utils/Images";
-import {DEVICE} from "../../../utils/Device";
 import {TopMenuList} from "../../../utils/constants/Menu";
+import {useViewport} from "../../../utils/ViewportContext";
+import ScrollTo from "../../../utils/ScrollTo";
 
 const ExpandedStyle = styled.div`
   position: fixed;
@@ -60,7 +61,7 @@ const MenuCloseStyle = styled.button`
   }
   
   .tablet & {
-    margin-right: 80px;
+    margin-right: 46px;
   }
 `;
 
@@ -88,12 +89,13 @@ const MainContainer = styled.div`
   }
 `;
 
-const MenuItem = styled.a<{active?: boolean}>`
+const MenuItem = styled.a<{active: boolean}>`
   font-size: 16px;
   line-height: 16px;
   font-weight: 500;
   text-transform: uppercase;
-  color: ${props => props.theme.color.white1};
+  color: ${props => props.active ? props.theme.color.green2 : props.theme.color.white1};
+  cursor: pointer;
   
   .mobile & {
     font-size: 18px;
@@ -102,13 +104,12 @@ const MenuItem = styled.a<{active?: boolean}>`
 `;
 
 const Expanded = (props: {active: boolean; setActive: (value: boolean) => void}) => {
-
-
+    const viewport = useViewport();
 
     return (
         <ExpandedStyle>
             {
-                DEVICE == 'tablet' && <ExpandedBackground active={props.active} />
+                viewport.device == 'tablet' && <ExpandedBackground active={props.active} />
             }
             <MenuContainer active={props.active}>
                 <TopContainer>
@@ -119,8 +120,10 @@ const Expanded = (props: {active: boolean; setActive: (value: boolean) => void})
                 </TopContainer>
                 <MainContainer>
                     {
-                        (DEVICE == 'mobile' ? TopMenuList.mobile : TopMenuList.tablet).map((menu, i) =>
-                            <MenuItem key={i}>{menu}</MenuItem>)
+                        (viewport.device == 'mobile' ? TopMenuList.mobile : TopMenuList.tablet).map((menu, i) =>
+                            <MenuItem active={viewport.currentChapter == menu.chapter} key={i} onClick={() => ScrollTo(menu.chapter)}>
+                                {menu.label}
+                            </MenuItem>)
                     }
                 </MainContainer>
             </MenuContainer>

@@ -1,20 +1,19 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import Theme from "./utils/Theme";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./utils/GlobalStyle";
 import Main from "./pages/main";
-import {DEVICE, initDevice} from "./utils/Device";
+import {ViewportProvider} from "./utils/ViewportContext";
 
 function App() {
-
-    initDevice();
-
     return (
         <ThemeProvider theme={Theme}>
-            <GlobalStyle />
-            <div className={"App " + DEVICE}>
-                <Main />
-            </div>
+            <ViewportProvider>
+                <GlobalStyle />
+                <div className={"App"}>
+                    <Main />
+                </div>
+            </ViewportProvider>
         </ThemeProvider>
     );
 }

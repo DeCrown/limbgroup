@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Text from "../about/Text";
 import Images from "../about/Images";
 import Content from "../shared/Content";
-import {DEVICE} from "../../utils/Device";
+import {useViewport} from "../../utils/ViewportContext";
 
 const AboutStyle = styled(Content)`
   background-color: ${props => props.theme.color.white2};
@@ -24,11 +24,13 @@ const AboutStyle = styled(Content)`
 `;
 
 const About = () => {
+    const viewport = useViewport();
+
     return (
-        <AboutStyle>
+        <AboutStyle id={'about'}>
             <Text />
             {
-                DEVICE == 'mobile' ? null : <Images />
+                viewport.device == 'mobile' ? null : <Images />
             }
         </AboutStyle>
     );

@@ -3,8 +3,8 @@ import styled from "styled-components";
 import Scroller from "./banner/Scroller";
 import Text from "./banner/Text";
 import Image from "./banner/Image";
-import {DEVICE} from "../../utils/Device";
 import Content from "../shared/Content";
+import {useViewport} from "../../utils/ViewportContext";
 
 const BannerStyle = styled(Content)`
   /*display: grid;
@@ -20,11 +20,13 @@ const BannerStyle = styled(Content)`
 `;
 
 const Banner = () => {
+    const viewport = useViewport();
+
     return (
         <BannerStyle>
-            { DEVICE == 'desktop' ? <Scroller /> : null }
+            { viewport.device == 'desktop' ? <Scroller /> : null }
             {
-                DEVICE == 'mobile'
+                viewport.device == 'mobile'
                     ? <><Image /><Text /></>
                     : <><Text /><Image /></>
             }

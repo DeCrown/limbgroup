@@ -16,7 +16,7 @@ const RelaxZoneStyle = styled(Content)`
 
 const RelaxZone = () => {
     return (
-        <RelaxZoneStyle>
+        <RelaxZoneStyle id={'relax'}>
             <ChapterHeader>RELAX ZONE</ChapterHeader>
             <FlappyBird />
         </RelaxZoneStyle>

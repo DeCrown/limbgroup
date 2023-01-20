@@ -6,9 +6,9 @@ import Theme from "../../utils/Theme";
 import ChapterHeader from "../shared/ChapterHeader";
 import ChapterText from "../shared/ChapterText";
 import ButtonGroup from "../shared/ButtonGroup";
-import {DEVICE} from "../../utils/Device";
 import Slider from "../shared/Slider";
 import AboutUsList from "../../utils/constants/AboutUs";
+import {useViewport} from "../../utils/ViewportContext";
 
 const TextStyle = styled.div`
   justify-self: end;
@@ -37,6 +37,8 @@ const ButtonGroupStyle = styled(ButtonGroup)`
 `;
 
 const Text = () => {
+    const viewport = useViewport();
+
     return (
         <TextStyle>
             <TextHeader>О нас</TextHeader>
@@ -47,7 +49,7 @@ const Text = () => {
                 Мы так же предлагаем дальнейшее сотрудничество, помогая нашим клиентам с обслуживанием созданных продуктов.
             </TextBody>
             {
-                DEVICE == 'mobile' && <Slider slides={AboutUsList} />
+                viewport.device == 'mobile' && <Slider slides={AboutUsList} />
             }
             <ButtonGroupStyle>
                 <ButtonMain>Связаться</ButtonMain>

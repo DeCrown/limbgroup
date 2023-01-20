@@ -20,7 +20,7 @@ const ProjectsStyle = styled(Content)`
 
 const Projects = () => {
     return (
-        <ProjectsStyle>
+        <ProjectsStyle id={'projects'}>
             <ChapterHeader>Наши проекты</ChapterHeader>
             <Cards />
         </ProjectsStyle>

@@ -6,7 +6,7 @@ import Content from "../shared/Content";
 import Inputs from "../countPrice/Inputs";
 import EqualSign from "../countPrice/EqualSign";
 import Result from "../countPrice/Result";
-import {DEVICE} from "../../utils/Device";
+import {useViewport} from "../../utils/ViewportContext";
 
 const CountPriceStyle = styled(Content)`
   background-color: ${props => props.theme.color.black1};
@@ -43,12 +43,14 @@ const CountPriceContainer = styled.div`
 `;
 
 const CountPrice = () => {
+    const viewport = useViewport();
+
     return (
-        <CountPriceStyle>
+        <CountPriceStyle id={'price'}>
             <ChapterHeaderStyle>Расчитать стоимость заказа</ChapterHeaderStyle>
             <CountPriceContainer>
                 <Inputs />
-                { DEVICE == 'mobile' ? null : <EqualSign />}
+                { viewport.device == 'mobile' ? null : <EqualSign />}
                 <Result />
             </CountPriceContainer>
         </CountPriceStyle>

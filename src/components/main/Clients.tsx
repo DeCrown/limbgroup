@@ -6,8 +6,8 @@ import ChapterText from "../shared/ChapterText";
 import Cards from "../clients/Cards";
 import BecomePartner from "../clients/BecomePartner";
 import {Components} from "../../utils/Images";
-import {DEVICE} from "../../utils/Device";
 import Slider from "../shared/Slider";
+import {useViewport} from "../../utils/ViewportContext";
 
 const ContentStyle = styled(Content)`
   padding-top: 140px;
@@ -69,15 +69,17 @@ const ClientsList = [
 ];
 
 const Clients = () => {
+    const viewport = useViewport();
+
     return (
-        <ContentStyle>
+        <ContentStyle id={'clients'}>
             <ChapterStyle>
                 <ChapterHeader>Наши клиенты</ChapterHeader>
                 <ChapterTextStyle>
                     Большую часть наших клиентов составляют представители малого и среднего бизнеса, желающие развить свой бизнес с помощью современных технологий.
                 </ChapterTextStyle>
                 {
-                    DEVICE == 'mobile' ? <Slider slides={ClientsList} /> : <Cards clients={ClientsList} />
+                    viewport.device == 'mobile' ? <Slider slides={ClientsList} /> : <Cards clients={ClientsList} />
                 }
             </ChapterStyle>
             <BecomePartner />

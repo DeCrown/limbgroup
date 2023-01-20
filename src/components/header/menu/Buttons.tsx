@@ -1,22 +1,21 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import styled from "styled-components";
+import {TopMenuList} from "../../../utils/constants/Menu";
+import ScrollTo from "../../../utils/ScrollTo";
+import {useViewport} from "../../../utils/ViewportContext";
 
-const ButtonStyle = styled.div`
+const ButtonStyle = styled.div<{active: boolean}>`
   font-weight: 500;
   font-size: 15px;
   text-transform: uppercase;
-  color: ${props => props.theme.color.white1};
+  color: ${props => props.active ? props.theme.color.green2 : props.theme.color.white1};
   cursor: pointer;
   white-space: nowrap;
-  
-  &.chosen {
-    color: ${props => props.theme.color.green2};
-  }
 `;
 
-const Button = (props: {children: any, button_i: number, chosen: boolean, setValue: (i: number) => void}) => {
+const Button = (props: {children: any; active: boolean; chapter: string; myref: any}) => {
     return (
-        <ButtonStyle className={props.chosen ? 'chosen' : undefined} onClick={() => props.setValue(props.button_i)}>{props.children}</ButtonStyle>
+        <ButtonStyle ref={props.myref ? props.myref : undefined} active={props.active} onClick={() => ScrollTo(props.chapter)}>{props.children}</ButtonStyle>
     );
 };
 
@@ -30,14 +29,6 @@ const ButtonsListStyle = styled.div`
   padding: 35px 20px 40px 20px;
   grid-gap: 50px;
 `;
-const ButtonsList = [
-    'О нас',
-    'Цены',
-    'Наши клиенты',
-    'Завершенные проекты',
-    'Relax Zone',
-    'Контакты'
-];
 const Underline = styled.div<{width: number, left: number}>`
   position: absolute;
   bottom: 24px;
@@ -60,27 +51,18 @@ const Underline = styled.div<{width: number, left: number}>`
 `;
 
 const Buttons = () => {
-    const [chosen_i, setChosen_i] = useState<number|null>(null);
-    const [chosenElement, setChosenElement] = useState<any>(null);
-
-    useEffect(() => {
-        setChosenElement(document.getElementsByClassName('chosen')[0]);
-    }, [chosen_i]);
-
-    useEffect(() => {
-        window.onload = () => {
-            setChosen_i(0);
-        };
-    }, []);
+    const viewport = useViewport();
+    const activeElement = useRef<any>(null);
 
     return (
         <ButtonsStyle className={'menuButtons'}>
             <ButtonsListStyle>
-                {ButtonsList.map((button, i) =>
-                    <Button key={i} button_i={i} chosen={i == chosen_i} setValue={setChosen_i} >{button}</Button>)}
+                {TopMenuList.desktop.map((button, i) =>
+                    <Button key={i} myref={button.chapter == viewport.currentChapter ? activeElement : null}
+                            active={button.chapter == viewport.currentChapter} chapter={button.chapter}>{button.label}</Button>)}
             </ButtonsListStyle>
-            <Underline width={(chosenElement?.clientWidth + 24) | 0}
-                       left={chosenElement?.getBoundingClientRect().x - document.getElementsByClassName('menuButtons')[0]?.getBoundingClientRect().x - 12}>
+            <Underline width={(activeElement.current?.clientWidth + 24) | 0}
+                       left={activeElement.current?.getBoundingClientRect().x - document.getElementsByClassName('menuButtons')[0]?.getBoundingClientRect().x - 12}>
                 <div></div>
                 <div></div>
                 <div></div>

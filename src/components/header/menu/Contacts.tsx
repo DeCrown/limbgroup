@@ -8,6 +8,9 @@ const ContactsStyle = styled.div`
   width: 160px;
   height: 52px;
   padding: 19px 0px 19px 0;
+
+  display: grid;
+  grid-template-columns: 18px auto;
   
   .mobile &, .tablet & {
     padding: 30px 0 0 0;
@@ -22,7 +25,11 @@ const PhoneSlider = styled.div`
   display: grid;
   grid-gap: 4px;
   align-content: start;
-  justify-content: center;
+  justify-content: start;
+  
+  .tablet &, .mobile & {
+    justify-content: center;
+  }
   
   & div {
     width: 6px;
@@ -61,7 +68,11 @@ const Links = styled.div`
 
 const RightContainer = styled.div`
   display: grid;
-  justify-items: start;
+  justify-items: end;
+
+  .tablet &, .mobile & {
+    justify-items: start;
+  }
 `;
 
 const Contacts = () => {

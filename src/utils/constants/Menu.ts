@@ -1,18 +1,35 @@
 
 export const TopMenuList = {
+    scroller: [
+        {chapter: 'header'},
+        {chapter: 'about'},
+        {chapter: 'price'},
+        {chapter: 'clients'},
+        {chapter: 'projects'},
+        {chapter: 'relax'},
+        {chapter: 'footer'}
+    ],
+    desktop: [
+        {label: 'О нас', chapter: 'about'},
+        {label: 'Цены', chapter: 'price'},
+        {label: 'Наши клиенты', chapter: 'clients'},
+        {label: 'Завершенные проекты', chapter: 'projects'},
+        {label: 'Relax Zone', chapter: 'relax'},
+        {label: 'Контакты', chapter: 'footer'}
+    ],
     tablet: [
-        'О нас',
-        'Цены',
-        'Наши клиенты',
-        'Завершенные проекты',
-        'Relax zone',
-        'Контакты'
+        {label: 'О нас', chapter: 'about'},
+        {label: 'Цены', chapter: 'price'},
+        {label: 'Наши клиенты', chapter: 'clients'},
+        {label: 'Завершенные проекты', chapter: 'projects'},
+        {label: 'Relax Zone', chapter: 'relax'},
+        {label: 'Контакты', chapter: 'footer'}
     ],
     mobile: [
-        'О нас',
-        'Цены',
-        'Наши клиенты',
-        'Завершенные проекты',
-        'Relax zone',
+        {label: 'О нас', chapter: 'about'},
+        {label: 'Цены', chapter: 'price'},
+        {label: 'Наши клиенты', chapter: 'clients'},
+        {label: 'Завершенные проекты', chapter: 'projects'},
+        {label: 'Relax Zone', chapter: 'relax'}
     ],
 };

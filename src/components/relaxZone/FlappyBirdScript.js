@@ -65,7 +65,7 @@ export const FlappyBirdScript = () => {
 
                     // remove & create new pipe
                     pipes = [...pipes.slice(1), [pipes[pipes.length - 1][0] + pipeGap + pipeWidth, pipeLoc()]];
-                    console.log(pipes);
+                    //console.log(pipes);
                 }
 
                 // if hit the pipe, end

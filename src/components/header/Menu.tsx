@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import styled from "styled-components";
 import {Icons} from "../../utils/Images";
-import {DEVICE} from "../../utils/Device";
 import Buttons from "./menu/Buttons";
 import Contacts from "./menu/Contacts";
 import LogoContainer from "./menu/Logo";
 import Expanded from "./menu/Expanded";
+import {useViewport} from "../../utils/ViewportContext";
 
 const MenuStyle = styled.div`
   height: 90px;
@@ -35,7 +35,7 @@ const MenuButtonStyle = styled.button`
   background-color: unset;
   
   .tablet & {
-    margin-right: 70px;
+    //margin-right: 70px;
   }
   
   .mobile & {
@@ -45,21 +45,24 @@ const MenuButtonStyle = styled.button`
 `;
 
 const Menu = () => {
+    const viewport = useViewport();
     const [active, setActive] = useState(false);
 
     return (
         <MenuStyle>
             <LogoContainer />
             {
-                DEVICE == 'desktop' ? <Buttons /> : null
+                viewport.device == 'desktop' && <Buttons />
             }
             {
-                DEVICE == 'desktop' ? <Contacts /> :
+                viewport.device == 'desktop' ? <Contacts /> :
                     <MenuButtonStyle onClick={() => setActive(true)}>
-                        <img src={DEVICE == 'mobile' ? Icons.menu.mobile : Icons.menu.tablet} />
+                        <img src={viewport.device == 'mobile' ? Icons.menu.mobile : Icons.menu.tablet} />
                     </MenuButtonStyle>
             }
-            <Expanded active={active} setActive={setActive} />
+            {
+                viewport.device == 'desktop' ? null : <Expanded active={active} setActive={setActive} />
+            }
         </MenuStyle>
     );
 };

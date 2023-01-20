@@ -24,7 +24,7 @@ const HeaderStyle = styled.div`
 
 const Header = () => {
     return (
-        <HeaderStyle>
+        <HeaderStyle id={'header'}>
             <Menu />
             <Banner />
         </HeaderStyle>

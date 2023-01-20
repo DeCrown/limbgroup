@@ -5,8 +5,8 @@ import Logo from "../footer/Logo";
 import Menu from "../footer/Menu";
 import Contacts from "../footer/Contacts";
 import Projects from "../footer/Projects";
-import {DEVICE} from "../../utils/Device";
 import FeedbackLine from "../footer/FeedbackLine";
+import {useViewport} from "../../utils/ViewportContext";
 
 const FooterContainerStyle = styled.div`
   position: relative;
@@ -36,14 +36,16 @@ const FooterStyle = styled(Content)`
 `;
 
 const Footer = () => {
+    const viewport = useViewport();
+
     return (
-        <FooterContainerStyle>
+        <FooterContainerStyle id={'footer'}>
             <FeedbackLine />
             <FooterStyle>
                 <Logo />
                 <Menu />
                 <Contacts />
-                { DEVICE == 'desktop' ? <Projects /> : null }
+                { viewport.device == 'desktop' ? <Projects /> : null }
             </FooterStyle>
         </FooterContainerStyle>
     );

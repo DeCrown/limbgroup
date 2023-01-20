@@ -5,7 +5,7 @@ import ButtonGroup from "../shared/ButtonGroup";
 import {ButtonIconWithBackground, ButtonMain} from "../ui/Buttons";
 import SvgIcons from "../../utils/SvgIcons";
 import Theme from "../../utils/Theme";
-import {DEVICE} from "../../utils/Device";
+import {useViewport} from "../../utils/ViewportContext";
 
 const BecomePartnerStyle = styled.div`
   height: 566px;
@@ -67,10 +67,12 @@ const TextStyle = styled.div`
 `;
 
 const BecomePartner = () => {
+    const viewport = useViewport();
+
     return (
         <BecomePartnerStyle>
             {
-                DEVICE == 'mobile' ? <MobileImage src={Components.feedback.mobile} /> : null
+                viewport.device == 'mobile' ? <MobileImage src={Components.feedback.mobile} /> : null
             }
             <MobileContainer>
                 <TextStyle>Станьте<br/>нашим<br/>партнером!</TextStyle>

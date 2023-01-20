@@ -5,7 +5,7 @@ import {ButtonIconWithBackground, ButtonMainMin} from "../ui/Buttons";
 import SvgIcons from "../../utils/SvgIcons";
 import Theme from "../../utils/Theme";
 import ButtonGroup from "../shared/ButtonGroup";
-import {DEVICE} from "../../utils/Device";
+import {useViewport} from "../../utils/ViewportContext";
 
 const FeedbackLineStyle = styled.div`
   width: 750px;
@@ -66,11 +66,13 @@ const Button = styled.div`
 `;
 
 const FeedbackLine = () => {
+    const viewport = useViewport();
+
     return (
         <FeedbackLineStyle>
             <Background>
                 {
-                    DEVICE == 'mobile' ? null : <Text>Готовы к запуску проекта? Напишите нам.</Text>
+                    viewport.device == 'mobile' ? null : <Text>Готовы к запуску проекта? Напишите нам.</Text>
                 }
                 <ButtonGroupStyle>
                     <ButtonMainMin>Связаться</ButtonMainMin>
@@ -78,7 +80,7 @@ const FeedbackLine = () => {
                     <ButtonIconWithBackground>{SvgIcons.instagram(Theme.color.white1)}</ButtonIconWithBackground>
                 </ButtonGroupStyle>
                 {
-                    DEVICE == 'mobile' ? null : <Button />
+                    viewport.device == 'mobile' ? null : <Button />
                 }
             </Background>
         </FeedbackLineStyle>

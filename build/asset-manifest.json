@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.js": "/static/js/main.2638d95a.js",
+    "static/media/computer.png": "/static/media/computer.bb2fa1472e823796d8ab.png",
+    "static/media/main.png": "/static/media/main.d5c837bfb733a4f7f23b.png",
+    "static/media/countPrice.png": "/static/media/countPrice.108b56a9ebcdc88ff519.png",
+    "static/media/countPriceTablet.png": "/static/media/countPriceTablet.68ea7664227d62af62fd.png",
+    "static/media/feedbackMobile.svg": "/static/media/feedbackMobile.e34237da2dba096b1a5b24ff0c223d4e.svg",
+    "static/media/feedback2.svg": "/static/media/feedback2.7b89770665b1ac931ecbf599dce7f31d.svg",
+    "static/media/feedback.png": "/static/media/feedback.25845188ff43c0083003.png",
+    "static/media/companyLogo.png": "/static/media/companyLogo.d5572297eaf236754f2b.png",
+    "static/media/logomin.svg": "/static/media/logomin.e76c61837a26ae57c9cd83294ed8a663.svg",
+    "static/media/logo.svg": "/static/media/logo.5aa4d7d759e31bd03ec2cb6e12cc04f2.svg",
+    "static/media/aboutus4.svg": "/static/media/aboutus4.d1f15654767b71e58d66948cdc909110.svg",
+    "static/media/aboutus2.svg": "/static/media/aboutus2.72e9ecd067b87c8792eb4aaf1914a3bc.svg",
+    "static/media/aboutus3.svg": "/static/media/aboutus3.4bd966be03e674cb26ce8767c08535ef.svg",
+    "static/media/aboutus1.svg": "/static/media/aboutus1.af7b621e659e2e708ffed962538f3ed0.svg",
+    "static/media/instagram.svg": "/static/media/instagram.8471129526071834de83405ae34759c2.svg",
+    "index.html": "/index.html",
+    "static/media/sections_scroller.svg": "/static/media/sections_scroller.dbe4a0399e8ee56fc73754428ab6348f.svg",
+    "static/media/alert.svg": "/static/media/alert.34fd598d150e90771ecc634bfb3ede83.svg",
+    "static/media/equalSign.svg": "/static/media/equalSign.4bf1dc60a643d75de2df05044a65280f.svg",
+    "static/media/feedbacklineGreen.svg": "/static/media/feedbacklineGreen.ef3c10a2af670ab268255aa33e583b24.svg",
+    "static/media/close.svg": "/static/media/close.6cc59e0472dcb4a302115541f37fadad.svg",
+    "static/media/feedbacklineButton.svg": "/static/media/feedbacklineButton.f9c171ddb367999aeab8686b9f21463e.svg",
+    "static/media/arrowdown.svg": "/static/media/arrowdown.c85c09244161338eb8be9c489f2b7ac0.svg",
+    "static/media/feedbacklineBlack.svg": "/static/media/feedbacklineBlack.db6999c441429ce999a65f70a2a3bbe9.svg",
+    "static/media/menumobile.svg": "/static/media/menumobile.c70129af9bdcd0c21ac92b9da5cc3b04.svg",
+    "static/media/menutablet.svg": "/static/media/menutablet.1ba2df15b2b93da48a53c32f35faa510.svg",
+    "main.2638d95a.js.map": "/static/js/main.2638d95a.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.2638d95a.js"
+  ]
+}
