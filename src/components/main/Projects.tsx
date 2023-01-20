@@ -14,6 +14,7 @@ const ProjectsStyle = styled(Content)`
   }
 
   .mobile & {
+    height: auto;
     padding-bottom: 150px;
   }
 `;

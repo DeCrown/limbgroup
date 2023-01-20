@@ -2,18 +2,7 @@ import React, {useState} from 'react';
 import Select from "../ui/Select";
 import styled from "styled-components";
 import {SwitchReverse} from "../ui/Switches";
-
-const Types = [
-    { value: '1', label: 'Минимальный' },
-    { value: '2', label: 'Шаблонный' },
-    { value: '2.5', label: 'Уникальный' },
-];
-
-const Sizes = [
-    { value: '1', label: 'Одностраничный' },
-    { value: '1.75', label: 'Двухстраничный' },
-    { value: '2', label: 'Трехстраничный' },
-];
+import {WorkSizes, WorkTypes} from "../../utils/constants/CountPrice";
 
 const InputsStyle = styled.div`
   & input {
@@ -65,30 +54,33 @@ const BrandingText = styled.div`
   color: ${props => props.theme.color.white1};
 `;
 
-const Inputs = () => {
-    const [type, setType] = useState(Types[0].value);
-    const [size, setSize] = useState(Sizes[0].value);
-    const [branding, setBranding] = useState(false);
-
+const Inputs = (props: {
+    type: string;
+    setType: (value: string) => void;
+    size: string;
+    setSize: (value: string) => void;
+    branding: boolean;
+    setBranding: (value: boolean) => void;
+}) => {
     return (
         <InputsStyle>
             <SelectTypeStyle>
                 <Select
-                    defaultValue={type}
-                    setValue={setType}
-                    options={Types}
+                    defaultValue={props.type}
+                    setValue={props.setType}
+                    options={WorkTypes}
                 />
             </SelectTypeStyle>
             <SelectSizeStyle>
                 <Select
-                    defaultValue={size}
-                    setValue={setSize}
-                    options={Sizes}
+                    defaultValue={props.size}
+                    setValue={props.setSize}
+                    options={WorkSizes}
                 />
             </SelectSizeStyle>
             <TextStyle>* По каждому проекту перечень работ разный</TextStyle>
-            <BrandingOn onClick={() => setBranding(!branding)}>
-                <SwitchReverse value={branding} />
+            <BrandingOn onClick={() => props.setBranding(!props.branding)}>
+                <SwitchReverse value={props.branding} />
                 <BrandingText>Включить брендинг</BrandingText>
             </BrandingOn>
         </InputsStyle>

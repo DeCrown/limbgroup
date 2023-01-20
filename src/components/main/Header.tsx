@@ -3,6 +3,7 @@ import Menu from "../header/Menu";
 import styled from "styled-components";
 import {Backgrounds} from "../../utils/Images";
 import Banner from "../header/Banner";
+import ButtonDown from "../header/banner/ButtonDown";
 
 const HeaderStyle = styled.div`
   background-color: ${props => props.theme.color.black1};
@@ -11,6 +12,7 @@ const HeaderStyle = styled.div`
   background-repeat: no-repeat;
   background-size: 960px 800px;
   background-position: 100% 0px;
+  position: relative;
   
   .tablet & {
     background-position: calc(100% + 112px) 0px;
@@ -27,6 +29,7 @@ const Header = () => {
         <HeaderStyle id={'header'}>
             <Menu />
             <Banner />
+            <ButtonDown />
         </HeaderStyle>
     );
 };

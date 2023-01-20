@@ -5,9 +5,9 @@ import styled from "styled-components";
 import ChapterText from "../shared/ChapterText";
 import Cards from "../clients/Cards";
 import BecomePartner from "../clients/BecomePartner";
-import {Components} from "../../utils/Images";
 import Slider from "../shared/Slider";
 import {useViewport} from "../../utils/ViewportContext";
+import {ClientsList} from "../../utils/constants/Clients";
 
 const ContentStyle = styled(Content)`
   padding-top: 140px;
@@ -44,29 +44,6 @@ const ChapterTextStyle = styled(ChapterText)`
     margin: 80px 0 30px 0;
   }
 `;
-
-const ClientsList = [
-    {
-        logo: Components.companyLogo,
-        description: 'Наименование, небольшое писание компании и т.д. Наименование, небольшое писание компании и т.д. Наименование, небольшое писание компании и т.д.'
-    },
-    {
-        logo: Components.companyLogo,
-        description: 'Наименование, небольшое писание компании и т.д.'
-    },
-    {
-        logo: Components.companyLogo,
-        description: 'Наименование, небольшое писание компании и т.д.'
-    },
-    {
-        logo: Components.companyLogo,
-        description: 'Наименование, небольшое писание компании и т.д.'
-    },
-    {
-        logo: Components.companyLogo,
-        description: 'Наименование, небольшое писание компании и т.д.'
-    }
-];
 
 const Clients = () => {
     const viewport = useViewport();

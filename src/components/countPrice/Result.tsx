@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import {WorkInitialPrices, WorkSizes, WorkTypes} from "../../utils/constants/CountPrice";
 
 const ResultStyle = styled.div`
   display: grid;
@@ -68,12 +69,20 @@ const SubText = styled.div`
   margin-top: 10px;
 `;
 
-const Result = () => {
+const empty = {coefficient: 1};
+
+const Result = (props: {type: string; size: string; branding: boolean}) => {
+    let type = WorkTypes.find(type_ => type_.value == props.type) || empty;
+    let size = WorkSizes.find(size_ => size_.value == props.size) || empty;
+    let price = WorkInitialPrices.type * type.coefficient +
+        WorkInitialPrices.size * size.coefficient +
+        (props.branding ? WorkInitialPrices.branding : 0);
+
     return (
         <ResultStyle>
             <PriceStyle>
                 <TextStyle>от</TextStyle>
-                <NumberStyle>65 000</NumberStyle>
+                <NumberStyle>{Math.round(price).toLocaleString()}</NumberStyle>
                 <TextStyle>₽</TextStyle>
             </PriceStyle>
             <SubText>Предварительный расчет</SubText>

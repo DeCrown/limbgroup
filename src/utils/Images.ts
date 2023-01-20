@@ -26,6 +26,7 @@ import feedback from '../images/components/feedback2.svg';
 import feedbackMobile from '../images/components/feedbackMobile.svg';
 import companyLogo from '../images/components/clients/companyLogo.png';
 import equalSign from '../images/components/equalSign.svg';
+import allProjects from '../images/components/allProjects.png';
 
 export const Icons = {
     instagram: instagram,
@@ -65,5 +66,6 @@ export const Components = {
         mobile: feedbackMobile
     },
     companyLogo: companyLogo,
-    equalSign: equalSign
+    equalSign: equalSign,
+    allProjects: allProjects
 }

@@ -2,14 +2,8 @@ import React from 'react';
 import FooterHeader from "../shared/FooterHeader";
 import styled from "styled-components";
 import FooterText from "../shared/FooterText";
-
-const MenuList = [
-    {text: 'О нас', link: 'menu'},
-    {text: 'Цены'},
-    {text: 'Наши клиенты'},
-    {text: 'Завершенные проекты'},
-    {text: 'Relax Zone'}
-];
+import {FooterMenuList} from "../../utils/constants/Menu";
+import ScrollTo from "../../utils/ScrollTo";
 
 const MenuListStyle = styled.div`
   margin-top: 10px;
@@ -19,6 +13,7 @@ const MenuListStyle = styled.div`
 
 const MenuFooterText = styled(FooterText)`
   text-transform: uppercase;
+  cursor: pointer;
 `;
 
 const Menu = () => {
@@ -26,7 +21,8 @@ const Menu = () => {
         <div>
             <FooterHeader>Меню</FooterHeader>
             <MenuListStyle>
-                {MenuList.map((el, i) => <MenuFooterText key={i}>{el.text}</MenuFooterText>)}
+                {FooterMenuList.map((el, i) =>
+                    <MenuFooterText key={i} onClick={() => ScrollTo(el.chapter)}>{el.label}</MenuFooterText>)}
             </MenuListStyle>
         </div>
     );

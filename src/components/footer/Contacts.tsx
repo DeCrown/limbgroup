@@ -2,11 +2,12 @@ import React from 'react';
 import FooterHeader from "../shared/FooterHeader";
 import FooterText from "../shared/FooterText";
 import styled from "styled-components";
+import {ContactsConstants} from "../../utils/constants/Contacts";
 
 const ContactsList = [
-    {key: 'тел:', value: '+7 (916) 217 10 07'},
-    {key: 'тел:', value: '+7 (977) 362 42 38'},
-    {key: 'email:', value: 'company@limbgroup.com'},
+    {key: 'тел:', value: ContactsConstants.phones.footer[0]},
+    {key: 'тел:', value: ContactsConstants.phones.footer[1]},
+    {key: 'email:', value: ContactsConstants.email},
 ];
 
 const ContactsListStyle = styled.div`

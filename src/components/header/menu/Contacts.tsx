@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import {Constants} from "../../../utils/Constants";
+import {ContactsConstants} from "../../../utils/constants/Contacts";
 import SvgIcons from "../../../utils/SvgIcons";
 import Theme from "../../../utils/Theme";
 
@@ -83,7 +83,7 @@ const Contacts = () => {
                 <div></div>
             </PhoneSlider>
             <RightContainer>
-                <PhoneNumber>{Constants.phoneNumber}</PhoneNumber>
+                <PhoneNumber>{ContactsConstants.phones.header}</PhoneNumber>
                 <Links>
                     {SvgIcons.instagram(Theme.color.white1)}
                     {SvgIcons.facebook(Theme.color.white1)}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from "styled-components";
 import {Backgrounds} from "../../utils/Images";
 import ChapterHeader from "../shared/ChapterHeader";
@@ -7,6 +7,7 @@ import Inputs from "../countPrice/Inputs";
 import EqualSign from "../countPrice/EqualSign";
 import Result from "../countPrice/Result";
 import {useViewport} from "../../utils/ViewportContext";
+import {WorkSizes, WorkTypes} from "../../utils/constants/CountPrice";
 
 const CountPriceStyle = styled(Content)`
   background-color: ${props => props.theme.color.black1};
@@ -44,14 +45,19 @@ const CountPriceContainer = styled.div`
 
 const CountPrice = () => {
     const viewport = useViewport();
+    const [type, setType] = useState(WorkTypes[0].value);
+    const [size, setSize] = useState(WorkSizes[0].value);
+    const [branding, setBranding] = useState(false);
 
     return (
         <CountPriceStyle id={'price'}>
             <ChapterHeaderStyle>Расчитать стоимость заказа</ChapterHeaderStyle>
             <CountPriceContainer>
-                <Inputs />
+                <Inputs type={type} setType={setType}
+                        size={size} setSize={setSize}
+                        branding={branding} setBranding={setBranding} />
                 { viewport.device == 'mobile' ? null : <EqualSign />}
-                <Result />
+                <Result type={type} size={size} branding={branding} />
             </CountPriceContainer>
         </CountPriceStyle>
     );

@@ -33,3 +33,11 @@ export const TopMenuList = {
         {label: 'Relax Zone', chapter: 'relax'}
     ],
 };
+
+export const FooterMenuList = [
+    {label: 'О нас', chapter: 'about'},
+    {label: 'Цены', chapter: 'price'},
+    {label: 'Наши клиенты', chapter: 'clients'},
+    {label: 'Завершенные проекты', chapter: 'projects'},
+    {label: 'Relax Zone', chapter: 'relax'}
+];

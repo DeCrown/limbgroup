@@ -6,6 +6,7 @@ import SvgIcons from "../../utils/SvgIcons";
 import Theme from "../../utils/Theme";
 import ButtonGroup from "../shared/ButtonGroup";
 import {useViewport} from "../../utils/ViewportContext";
+import ScrollTo from "../../utils/ScrollTo";
 
 const FeedbackLineStyle = styled.div`
   width: 750px;
@@ -55,7 +56,9 @@ const ButtonGroupStyle = styled(ButtonGroup)`
   background: none;
 `;
 
-const Button = styled.div`
+const Button = styled.button`
+  border: none;
+  background-color: unset;
   height: 50px;
   width: 110px;
   background-image: url("${Components.feedbackLineButton}");
@@ -80,7 +83,7 @@ const FeedbackLine = () => {
                     <ButtonIconWithBackground>{SvgIcons.instagram(Theme.color.white1)}</ButtonIconWithBackground>
                 </ButtonGroupStyle>
                 {
-                    viewport.device == 'mobile' ? null : <Button />
+                    viewport.device == 'mobile' ? null : <Button onClick={() => ScrollTo('header')} />
                 }
             </Background>
         </FeedbackLineStyle>
