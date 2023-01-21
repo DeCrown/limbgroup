@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
 
-const InputStyle = styled.input<{error?: boolean}>`
-  background-color: ${props => props.error ? '#FBF1F2' : props.theme.color.white1};
+const TextareaStyle = styled.textarea`
+  background-color: ${props => props.theme.color.white1};
   border: 1px solid ${props => props.theme.color.greyBorder1};
   border-radius: 22px;
 
@@ -11,10 +11,13 @@ const InputStyle = styled.input<{error?: boolean}>`
   color: ${props => props.theme.color.black1};
 
   width: 360px;
-  height: 44px;
+  height: 120px;
   box-sizing: border-box;
-  padding: 0 20px;
-  
+  padding: 10px 20px;
+
+  resize: none;
+  font-family: 'Roboto';
+
   &::placeholder {
     font-family: 'Roboto';
     font-weight: 400;
@@ -24,10 +27,10 @@ const InputStyle = styled.input<{error?: boolean}>`
   }
 `;
 
-const Input = (props: any) => {
+export const Textarea = (props: any) => {
     return (
-        <InputStyle type={'text'} {...props} />
+        <TextareaStyle {...props} />
     );
 };
 
-export default Input;
+export default Textarea;

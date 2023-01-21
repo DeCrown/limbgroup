@@ -9,6 +9,7 @@ import ButtonGroup from "../shared/ButtonGroup";
 import Slider from "../shared/Slider";
 import AboutUsList from "../../utils/constants/AboutUs";
 import {useViewport} from "../../utils/ViewportContext";
+import {showFeedback} from "../feedback/ShowFeedback";
 
 const TextStyle = styled.div`
   justify-self: end;
@@ -52,7 +53,7 @@ const Text = () => {
                 viewport.device == 'mobile' && <Slider slides={AboutUsList} />
             }
             <ButtonGroupStyle>
-                <ButtonMain>Связаться</ButtonMain>
+                <ButtonMain onClick={showFeedback}>Связаться</ButtonMain>
                 <ButtonIcon>{SvgIcons.facebook(Theme.color.green1)}</ButtonIcon>
                 <ButtonIcon>{SvgIcons.instagram(Theme.color.green1)}</ButtonIcon>
             </ButtonGroupStyle>

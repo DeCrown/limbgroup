@@ -4,6 +4,8 @@ import menuMobile from '../images/icons/menumobile.svg';
 import menuTablet from '../images/icons/menutablet.svg';
 import arrowDown from '../images/icons/arrowdown.svg';
 import close from '../images/icons/close.svg';
+import blackClose from '../images/icons/blackclose.svg';
+import send from '../images/icons/send.svg';
 
 import logo from '../images/logotypes/logo.svg';
 import logoMin from '../images/logotypes/logomin.svg';
@@ -38,7 +40,9 @@ export const Icons = {
     arrow: {
         down: arrowDown
     },
-    close: close
+    close: close,
+    blackClose: blackClose,
+    send: send
 }
 
 export const Logo = {

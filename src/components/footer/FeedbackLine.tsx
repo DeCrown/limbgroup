@@ -7,6 +7,7 @@ import Theme from "../../utils/Theme";
 import ButtonGroup from "../shared/ButtonGroup";
 import {useViewport} from "../../utils/ViewportContext";
 import ScrollTo from "../../utils/ScrollTo";
+import {showFeedback} from "../feedback/ShowFeedback";
 
 const FeedbackLineStyle = styled.div`
   width: 750px;
@@ -78,7 +79,7 @@ const FeedbackLine = () => {
                     viewport.device == 'mobile' ? null : <Text>Готовы к запуску проекта? Напишите нам.</Text>
                 }
                 <ButtonGroupStyle>
-                    <ButtonMainMin>Связаться</ButtonMainMin>
+                    <ButtonMainMin onClick={showFeedback}>Связаться</ButtonMainMin>
                     <ButtonIconWithBackground>{SvgIcons.facebook(Theme.color.white1)}</ButtonIconWithBackground>
                     <ButtonIconWithBackground>{SvgIcons.instagram(Theme.color.white1)}</ButtonIconWithBackground>
                 </ButtonGroupStyle>

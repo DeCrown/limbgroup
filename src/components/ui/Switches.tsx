@@ -9,6 +9,7 @@ const SwitchStyle = styled.div<{checked: boolean}>`
   height: 14px;
   padding: 2px;
   cursor: pointer;
+  transition: background-color 0.1s linear;
   
   & > div {
     background-color: ${props => props.theme.color.gray2};
@@ -79,7 +80,7 @@ export const SwitchBlack = (props: SwitchProps) => <SwitchGray {...props} mode={
 /* WHITE */
 
 const SwitchWhiteStyle = styled(SwitchStyle)`
-  background-color: ${props => props.theme.color.black1}22;
+  background-color: ${props => props.checked ? props.theme.color.green1 : props.theme.color.black1 + '40'};
   & > div {
     background-color: ${props => props.theme.color.white1};
   }

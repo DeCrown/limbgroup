@@ -90,6 +90,8 @@ const Button = styled.div`
 
   position: absolute;
   align-items: center;
+  white-space: nowrap;
+  
   & svg {
     transform: rotate(90deg);
   }

@@ -6,6 +6,7 @@ import {ButtonIconWithBackground, ButtonMain} from "../ui/Buttons";
 import SvgIcons from "../../utils/SvgIcons";
 import Theme from "../../utils/Theme";
 import {useViewport} from "../../utils/ViewportContext";
+import {showFeedback} from "../feedback/ShowFeedback";
 
 const BecomePartnerStyle = styled.div`
   height: 566px;
@@ -77,7 +78,7 @@ const BecomePartner = () => {
             <MobileContainer>
                 <TextStyle>Станьте<br/>нашим<br/>партнером!</TextStyle>
                 <ButtonGroupStyle>
-                    <ButtonMain>Связаться</ButtonMain>
+                    <ButtonMain onClick={showFeedback}>Связаться</ButtonMain>
                     <ButtonIconWithBackground>{SvgIcons.facebook(Theme.color.white1)}</ButtonIconWithBackground>
                     <ButtonIconWithBackground>{SvgIcons.instagram(Theme.color.white1)}</ButtonIconWithBackground>
                 </ButtonGroupStyle>

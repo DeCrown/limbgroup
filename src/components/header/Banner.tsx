@@ -15,7 +15,8 @@ const BannerStyle = styled(Content)`
   
   .mobile & {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    //grid-template-rows: 1fr 1fr;
+    grid-template-rows: min-content 1fr;
   }
 `;
 

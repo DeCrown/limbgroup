@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/static/js/main.d9f5670c.js",
+    "main.js": "/static/js/main.ad5257a0.js",
     "static/media/computer.png": "/static/media/computer.bb2fa1472e823796d8ab.png",
     "static/media/main.png": "/static/media/main.d5c837bfb733a4f7f23b.png",
     "static/media/countPrice.png": "/static/media/countPrice.108b56a9ebcdc88ff519.png",
@@ -29,14 +29,16 @@
     "static/media/equalSign.svg": "/static/media/equalSign.891d1cc2b988a156043432f12a3c964d.svg",
     "static/media/feedbacklineGreen.svg": "/static/media/feedbacklineGreen.c5c5fcaeab567302ff471adc0e3fb687.svg",
     "static/media/close.svg": "/static/media/close.ea077627be034dce927607084bdf1410.svg",
+    "static/media/send.svg": "/static/media/send.8536a8ec275f0a07489c7f4a00d74989.svg",
     "static/media/feedbacklineButton.svg": "/static/media/feedbacklineButton.911f2c4b60f687691bafff9744ed35bf.svg",
+    "static/media/blackclose.svg": "/static/media/blackclose.f4655cd891aec7e5a0942847f75ed1a9.svg",
     "static/media/arrowdown.svg": "/static/media/arrowdown.d4e64d86f05daf2cd4d9e6e045db6e68.svg",
     "static/media/menumobile.svg": "/static/media/menumobile.77eecef945914cbf47463424f2b1f314.svg",
     "static/media/menutablet.svg": "/static/media/menutablet.24c6586a95afeeddad63d53855440d26.svg",
     "static/media/feedbacklineBlack.svg": "/static/media/feedbacklineBlack.b25620d0860dcf9ab78594d40d630a93.svg",
-    "main.d9f5670c.js.map": "/static/js/main.d9f5670c.js.map"
+    "main.ad5257a0.js.map": "/static/js/main.ad5257a0.js.map"
   },
   "entrypoints": [
-    "static/js/main.d9f5670c.js"
+    "static/js/main.ad5257a0.js"
   ]
 }
