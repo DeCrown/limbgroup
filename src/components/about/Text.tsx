@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import {ButtonIcon, ButtonIconWithBackground, ButtonMain} from "../ui/Buttons";
-import SvgIcons from "../../utils/SvgIcons";
-import Theme from "../../utils/Theme";
+import {ButtonIconWithBackground, ButtonMain} from "../ui/Buttons";
 import ChapterHeader from "../shared/ChapterHeader";
 import ChapterText from "../shared/ChapterText";
 import ButtonGroup from "../shared/ButtonGroup";
@@ -10,6 +8,7 @@ import Slider from "../shared/Slider";
 import AboutUsList from "../../utils/constants/AboutUs";
 import {useViewport} from "../../utils/ViewportContext";
 import {showFeedback} from "../feedback/ShowFeedback";
+import {FacebookLink, InstagramLink} from "../shared/Links";
 
 const TextStyle = styled.div`
   justify-self: end;
@@ -37,6 +36,12 @@ const ButtonGroupStyle = styled(ButtonGroup)`
   margin-top: 25px;
 `;
 
+const Link = styled(ButtonIconWithBackground)`
+  & svg {
+    fill: ${props => props.theme.color.green1};
+  }
+`;
+
 const Text = () => {
     const viewport = useViewport();
 
@@ -54,8 +59,8 @@ const Text = () => {
             }
             <ButtonGroupStyle>
                 <ButtonMain onClick={showFeedback}>Связаться</ButtonMain>
-                <ButtonIcon>{SvgIcons.facebook(Theme.color.green1)}</ButtonIcon>
-                <ButtonIcon>{SvgIcons.instagram(Theme.color.green1)}</ButtonIcon>
+                <FacebookLink button={Link} />
+                <InstagramLink button={Link} />
             </ButtonGroupStyle>
         </TextStyle>
     );

@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from "styled-components";
 import Content from "../shared/Content";
-import Logo from "../footer/Logo";
-import Menu from "../footer/Menu";
-import Contacts from "../footer/Contacts";
-import Projects from "../footer/Projects";
-import FeedbackLine from "../footer/FeedbackLine";
+import Logo from "./Logo";
+import Menu from "./Menu";
+import Contacts from "./Contacts";
+import Projects from "./Projects";
+import FeedbackLine from "./FeedbackLine";
 import {useViewport} from "../../utils/ViewportContext";
 
 const FooterContainerStyle = styled.div`
@@ -20,6 +20,7 @@ const FooterStyle = styled(Content)`
   align-content: center;
   padding-top: 25px;
   box-sizing: border-box;
+  grid-gap: 30px;
   
   .tablet & {
     grid-template-columns: 1fr 1fr 1fr;

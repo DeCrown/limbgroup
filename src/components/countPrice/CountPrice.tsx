@@ -3,9 +3,9 @@ import styled from "styled-components";
 import {Backgrounds} from "../../utils/Images";
 import ChapterHeader from "../shared/ChapterHeader";
 import Content from "../shared/Content";
-import Inputs from "../countPrice/Inputs";
-import EqualSign from "../countPrice/EqualSign";
-import Result from "../countPrice/Result";
+import Inputs from "./Inputs";
+import EqualSign from "./EqualSign";
+import Result from "./Result";
 import {useViewport} from "../../utils/ViewportContext";
 import {WorkSizes, WorkTypes} from "../../utils/constants/CountPrice";
 
@@ -24,8 +24,10 @@ const CountPriceStyle = styled(Content)`
   }
   
   .mobile & {
+    background-image: url("${Backgrounds.countPrice.tablet}");
     height: auto;
     padding-top: 40px;
+    background-position: calc(100% + 350px) 0px;
   }
 `;
 

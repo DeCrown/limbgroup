@@ -19,7 +19,6 @@ const getCurrentChapter = (current_: string|null, height_: number) => {
 }
 
 const getDevice = (width_: number) => {
-    console.log(width_);
     if (width_ >= 1480) {
         return 'desktop';
     }
@@ -50,6 +49,8 @@ const Chapters = [
     'relax',
     'footer'
 ];
+
+export const ViewportConsumer = ViewportContext.Consumer;
 
 export const ViewportProvider = (props: {children?: any}) => {
     const [width, setWidth] = useState(document.body.clientWidth);

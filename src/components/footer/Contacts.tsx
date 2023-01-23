@@ -3,6 +3,8 @@ import FooterHeader from "../shared/FooterHeader";
 import FooterText from "../shared/FooterText";
 import styled from "styled-components";
 import {ContactsConstants} from "../../utils/constants/Contacts";
+import {ButtonIcon} from "../ui/Buttons";
+import {FacebookLink, InstagramLink} from "../shared/Links";
 
 const ContactsList = [
     {key: 'тел:', value: ContactsConstants.phones.footer[0]},
@@ -32,6 +34,19 @@ const FooterTextValue = styled(FooterText)`
   color: ${props => props.theme.color.white1};
 `;
 
+const Links = styled.div`
+  display: grid;
+  grid-auto-flow: column;
+  margin-top: 10px;
+  justify-content: start;
+`;
+
+const Link = styled(ButtonIcon)`
+  & svg {
+    fill: ${props => props.theme.color.white1};
+  }
+`;
+
 const Contacts = () => {
     return (
         <div>
@@ -44,6 +59,10 @@ const Contacts = () => {
                     {ContactsList.map((el, i) => <FooterTextValue key={i}>{el.value}</FooterTextValue>)}
                 </ContactsListValuesStyle>
             </ContactsListStyle>
+            <Links>
+                <FacebookLink button={Link} />
+                <InstagramLink button={Link} />
+            </Links>
         </div>
     );
 };

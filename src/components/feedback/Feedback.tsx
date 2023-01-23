@@ -2,12 +2,12 @@ import React, {ChangeEvent, useEffect, useState} from 'react';
 import styled from "styled-components";
 import Input from "../ui/Input";
 import Textarea from "../ui/Textarea";
-import {Icons} from "../../utils/Images";
+import {Backgrounds, Icons} from "../../utils/Images";
 import {SwitchWhite} from "../ui/Switches";
 import Label from "../ui/Label";
 import {ButtonMain} from "../ui/Buttons";
 import Theme from "../../utils/Theme";
-import {closeFeedback} from "../feedback/ShowFeedback";
+import {closeFeedback} from "./ShowFeedback";
 
 const BackgroundStyle = styled.div`
   position: fixed;
@@ -37,17 +37,38 @@ const FormStyle = styled.div`
   grid-gap: 15px;
   justify-content: center;
   position: relative;
+  box-sizing: border-box;
   
   .mobile & {
+    align-content: start;
     grid-gap: 20px;
-    width: calc(100% - 60px);
+    width: 100%;
     height: 100%;
     padding: 60px 30px 0 30px;
     grid-template-columns: 1fr;
+    box-sizing: border-box;
     
     & input, & textarea {
       width: 100%;
     }
+  }
+`;
+
+const BackgroundImage = styled.div`
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(121.55deg, ${props => props.theme.color.white2} 31.48%, ${props => props.theme.color.white2}00 100%), url("${Backgrounds.form}");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  background-position: 50px 110px;
+  z-index: 0;
+  
+  .mobile & {
+    display: none;
   }
 `;
 
@@ -81,6 +102,7 @@ const AgreeStyle = styled.div`
   align-items: center;
   justify-content: start;
   cursor: pointer;
+  position: relative;
 `;
 
 const AgreeText = styled.div`
@@ -175,6 +197,7 @@ const Feedback = () => {
     return (
         <BackgroundStyle>
             <FormStyle>
+                <BackgroundImage />
                 <CloseButton onClick={closeFeedback}>
                     <img src={Icons.blackClose} />
                 </CloseButton>

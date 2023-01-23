@@ -7,14 +7,13 @@ import Content from "../shared/Content";
 import {useViewport} from "../../utils/ViewportContext";
 
 const BannerStyle = styled(Content)`
-  /*display: grid;
-  grid-template-columns: minmax(116px, 245px) auto 50%;*/
   display: flex;
   height: calc(100% - 90px);
   position: relative;
   
   .mobile & {
     display: grid;
+    height: calc(100% - 80px);
     //grid-template-rows: 1fr 1fr;
     grid-template-rows: min-content 1fr;
   }

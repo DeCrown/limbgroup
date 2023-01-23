@@ -7,5 +7,7 @@ export const ContactsConstants = {
             '+7 (977) 362 42 38',
         ]
     },
-    email: 'company@limbgroup.com'
+    email: 'company@limbgroup.com',
+    facebook: 'https://facebook.com/',
+    instagram: 'https://instagram.com/',
 }

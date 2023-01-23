@@ -2,11 +2,10 @@ import React from 'react';
 import styled from "styled-components";
 import {Components} from "../../utils/Images";
 import ButtonGroup from "../shared/ButtonGroup";
-import {ButtonIconWithBackground, ButtonMain} from "../ui/Buttons";
-import SvgIcons from "../../utils/SvgIcons";
-import Theme from "../../utils/Theme";
+import {ButtonIcon, ButtonMain} from "../ui/Buttons";
 import {useViewport} from "../../utils/ViewportContext";
 import {showFeedback} from "../feedback/ShowFeedback";
+import {FacebookLink, InstagramLink} from "../shared/Links";
 
 const BecomePartnerStyle = styled.div`
   height: 566px;
@@ -67,6 +66,12 @@ const TextStyle = styled.div`
   }
 `;
 
+const Link = styled(ButtonIcon)`
+  & svg {
+    fill: ${props => props.theme.color.white1};
+  }
+`;
+
 const BecomePartner = () => {
     const viewport = useViewport();
 
@@ -79,8 +84,8 @@ const BecomePartner = () => {
                 <TextStyle>Станьте<br/>нашим<br/>партнером!</TextStyle>
                 <ButtonGroupStyle>
                     <ButtonMain onClick={showFeedback}>Связаться</ButtonMain>
-                    <ButtonIconWithBackground>{SvgIcons.facebook(Theme.color.white1)}</ButtonIconWithBackground>
-                    <ButtonIconWithBackground>{SvgIcons.instagram(Theme.color.white1)}</ButtonIconWithBackground>
+                    <FacebookLink button={Link} />
+                    <InstagramLink button={Link} />
                 </ButtonGroupStyle>
             </MobileContainer>
         </BecomePartnerStyle>

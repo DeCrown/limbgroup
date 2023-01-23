@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {TopMenuList} from "../../../utils/constants/Menu";
 import ScrollTo from "../../../utils/ScrollTo";
 import {useViewport} from "../../../utils/ViewportContext";
+import {Icons} from "../../../utils/Images";
 
 const ButtonStyle = styled.div<{active: boolean}>`
   font-weight: 500;
@@ -11,6 +12,18 @@ const ButtonStyle = styled.div<{active: boolean}>`
   color: ${props => props.active ? props.theme.color.green2 : props.theme.color.white1};
   cursor: pointer;
   white-space: nowrap;
+  position: relative;
+  
+  &:nth-child(5)::after {
+    content: '';
+    display: block;
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    right: -16px;
+    top: -14px;
+    background-image: url("${Icons.gamepad}");
+  }
 `;
 
 const Button = (props: {children: any; active: boolean; chapter: string; myref: any}) => {

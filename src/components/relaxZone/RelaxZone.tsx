@@ -2,7 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import Content from "../shared/Content";
 import ChapterHeader from "../shared/ChapterHeader";
-import FlappyBird from "../relaxZone/FlappyBird";
+import FlappyBird from "./FlappyBird";
 
 const RelaxZoneStyle = styled(Content)`
   //height: 894px;

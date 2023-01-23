@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
-import Text from "../about/Text";
-import Images from "../about/Images";
+import Text from "./Text";
+import Images from "./Images";
 import Content from "../shared/Content";
 import {useViewport} from "../../utils/ViewportContext";
 

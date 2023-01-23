@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
 import {ContactsConstants} from "../../../utils/constants/Contacts";
-import SvgIcons from "../../../utils/SvgIcons";
-import Theme from "../../../utils/Theme";
+import {ButtonIcon} from "../../ui/Buttons";
+import {FacebookLink, InstagramLink} from "../../shared/Links";
 
 const ContactsStyle = styled.div`
   width: 160px;
@@ -53,16 +53,14 @@ const PhoneNumber = styled.div`
 const Links = styled.div`
   display: grid;
   grid-auto-flow: column;
-  grid-gap: 20px;
   justify-content: end;
-  padding-top: 10px;
   
   .tablet & {
-    padding-top: 24px;
+    padding-top: 14px;
   }
 
   .mobile & {
-    padding-top: 20px;
+    padding-top: 10px;
   }
 `;
 
@@ -72,6 +70,12 @@ const RightContainer = styled.div`
 
   .tablet &, .mobile & {
     justify-items: start;
+  }
+`;
+
+const Link = styled(ButtonIcon)`
+  & svg {
+    fill: ${props => props.theme.color.white1};
   }
 `;
 
@@ -85,8 +89,8 @@ const Contacts = () => {
             <RightContainer>
                 <PhoneNumber>{ContactsConstants.phones.header}</PhoneNumber>
                 <Links>
-                    {SvgIcons.instagram(Theme.color.white1)}
-                    {SvgIcons.facebook(Theme.color.white1)}
+                    <InstagramLink button={Link} />
+                    <FacebookLink button={Link} />
                 </Links>
             </RightContainer>
         </ContactsStyle>

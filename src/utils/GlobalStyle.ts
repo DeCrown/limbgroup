@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import Theme from "./Theme";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -9,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
     line-height: 100%;
     user-select: none;
     overflow-x: hidden;
+    background-color: ${Theme.color.white2};
   }
   
   .App.desktop {
@@ -20,6 +22,10 @@ const GlobalStyle = createGlobalStyle`
   }
   .App.mobile {
     max-width: 980px;
+  }
+  
+  p {
+    margin: 0 0 20px 0;
   }
 `;
 
