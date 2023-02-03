@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import styled from "styled-components";
 import {FlappyBirdScript} from "./FlappyBirdScript";
+import {Backgrounds} from "../../utils/Images";
 
 const FlappyBirdStyle = styled.div`
   margin-top: 80px;
@@ -39,6 +40,26 @@ const FlappyBirdStyle = styled.div`
   }
 `;
 
+const ImgContainer = styled.div`
+  
+  position: relative;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  
+  & > img {
+    position: absolute;
+    left: -427px;
+    z-index: -1;
+    bottom: -63px;
+    width: 1000px;
+    
+    .mobile & {
+      display: none;
+    }
+  }
+`;
+
 const FlappyBird = () => {
 
     useEffect(() => {
@@ -55,7 +76,10 @@ const FlappyBird = () => {
                 </div>
             </header>
 
-            <canvas id="canvas" width="431" height="768"></canvas>
+            <ImgContainer>
+                <canvas id="canvas" width="431" height="768" />
+                <img src={Backgrounds.relaxZoneBG} />
+            </ImgContainer>
         </FlappyBirdStyle>
     );
 };

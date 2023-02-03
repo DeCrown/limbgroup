@@ -18,6 +18,7 @@ import feedbackBG from '../images/backgrounds/feedback.png';
 import countPriceBG from '../images/backgrounds/countPrice.png';
 import countPriceTabletBG from '../images/backgrounds/countPriceTablet.png';
 import formBG from '../images/backgrounds/form.png';
+import relaxZoneBG from '../images/backgrounds/relaxZone.png';
 
 import sectionsScroller from '../images/components/sections_scroller.svg';
 import computer from '../images/components/computer.png';
@@ -66,7 +67,8 @@ export const Backgrounds = {
         desktop: countPriceBG,
         tablet: countPriceTabletBG
     },
-    form: formBG
+    form: formBG,
+    relaxZoneBG: relaxZoneBG
 }
 
 export const Components = {

@@ -1,11 +1,12 @@
 {
   "files": {
-    "main.js": "/static/js/main.52d4ec0d.js",
+    "main.js": "/static/js/main.35aad0ff.js",
     "static/media/computer.png": "/static/media/computer.bb2fa1472e823796d8ab.png",
     "static/media/form.png": "/static/media/form.fef343d77160e07ffac1.png",
     "static/media/main.png": "/static/media/main.d5c837bfb733a4f7f23b.png",
     "static/media/countPrice.png": "/static/media/countPrice.108b56a9ebcdc88ff519.png",
     "static/media/mainMobile.png": "/static/media/mainMobile.48e2584c61a664749831.png",
+    "static/media/relaxZone.png": "/static/media/relaxZone.88e0b62d270809a690e8.png",
     "static/media/countPriceTablet.png": "/static/media/countPriceTablet.68ea7664227d62af62fd.png",
     "static/media/mainMini.png": "/static/media/mainMini.30d6b8f34576738b89b4.png",
     "static/media/feedbackMobile.svg": "/static/media/feedbackMobile.e34237da2dba096b1a5b24ff0c223d4e.svg",
@@ -40,9 +41,9 @@
     "static/media/feedbacklineBlack.svg": "/static/media/feedbacklineBlack.db6999c441429ce999a65f70a2a3bbe9.svg",
     "static/media/menumobile.svg": "/static/media/menumobile.c70129af9bdcd0c21ac92b9da5cc3b04.svg",
     "static/media/menutablet.svg": "/static/media/menutablet.1ba2df15b2b93da48a53c32f35faa510.svg",
-    "main.52d4ec0d.js.map": "/static/js/main.52d4ec0d.js.map"
+    "main.35aad0ff.js.map": "/static/js/main.35aad0ff.js.map"
   },
   "entrypoints": [
-    "static/js/main.52d4ec0d.js"
+    "static/js/main.35aad0ff.js"
   ]
 }
