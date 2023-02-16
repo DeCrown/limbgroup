@@ -93,7 +93,8 @@ export const SwitchWhite = (props: SwitchProps) => <SwitchGray {...props} mode={
 const SwitchReverseStyle = styled(SwitchStyle)`
   background-color: ${props => props.theme.color.white1};
   & > div {
-    background-color: ${props => props.theme.color.black1};
+    //background-color: ${props => props.theme.color.black1};
+    background-color: ${props => props.checked ? props.theme.color.green1 : props.theme.color.black1};
   }
 `;
 

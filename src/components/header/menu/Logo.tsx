@@ -7,6 +7,7 @@ const LogoContainerStyle = styled.div`
   display: grid;
   & img {
     height: 50px;
+    cursor: pointer;
   }
   
   .tablet & {
@@ -20,7 +21,7 @@ const LogoContainerStyle = styled.div`
 const LogoContainer = () => {
     return (
         <LogoContainerStyle>
-            <img src={Logo.logo} />
+            <img src={Logo.logo} onClick={() => document.location.href = '/'} />
         </LogoContainerStyle>
     );
 };

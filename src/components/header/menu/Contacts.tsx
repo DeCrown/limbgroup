@@ -19,6 +19,8 @@ const ContactsStyle = styled.div`
     grid-template-columns: 66px auto;
     width: auto;
   }
+
+  user-select: text;
 `;
 
 const PhoneSlider = styled.div`

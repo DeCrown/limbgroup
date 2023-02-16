@@ -6,6 +6,10 @@ const LogoStyle = styled.div`
   display: grid;
   grid-gap: 10px;
   align-content: start;
+  
+  & img {
+    cursor: pointer;
+  }
 `;
 
 const TextStyle = styled.div`
@@ -18,7 +22,7 @@ const TextStyle = styled.div`
 const LogoContainer = () => {
     return (
         <LogoStyle>
-            <img src={Logo.logoMin}></img>
+            <img src={Logo.logoMin} onClick={() => document.location.href = '/'}></img>
             <TextStyle>Limbgroup © 2010 - 2022</TextStyle>
         </LogoStyle>
     );

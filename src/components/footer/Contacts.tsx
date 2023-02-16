@@ -26,6 +26,7 @@ const ContactsListKeysStyle = styled.div`
 const ContactsListValuesStyle = styled.div`
   display: grid;
   grid-gap: 10px;
+  user-select: text;
 `;
 const FooterTextValue = styled(FooterText)`
   text-transform: uppercase;
